@@ -19,7 +19,7 @@ yO = -0.4;
 teta = 0;
 %Forces
 
-forceW = 8;
+forceW = 8000;
 
 aireSection = input("Entrez l'aire de la section de votre poutre \n");
 
@@ -28,5 +28,7 @@ forcePoidsABC = L1 * aireSection * 7850 * 9.81;
 forcePoidsDEF = L2 * aireSection * 7850 * 9.81; 
 
 forcePoidsCE = input("Entrez le poids d'un des verins \n");
+
+forcePoidsCE = forcePoidsCE * 9.81;
 
 forcePoidsOB = forcePoidsCE;
