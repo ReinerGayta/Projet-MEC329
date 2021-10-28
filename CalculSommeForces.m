@@ -1,36 +1,35 @@
 %Nom : SystèmesDéquations
 
-vL1 = [xD,yD,0];
+vecteurDistAD = [xD,yD,0];
 
-vA1 = [xB,yB,0];
+vecteurDistAB = [xB,yB,0];
 
-vL2 = [xF-xD,yF-yD,0];
+vecteurDistDF = [xF-xD,yF-yD,0];
 
-vA2 = [xE-xD,yE-yD,0];
+vecteurDistDE = [xE-xD,yE-yD,0];
 
-vB1 = [xD-xC,yD-yC,0];
-
-
-sFABC = vFA + vFOB + vWABC + -vFCE + vWCE/2 + -vFD + vWOB/2;
-
-sFDEF = vFD + vFCE + vWDEF + vWCE/2 + vW;
-
-sMDDEF = cross(vL2,vW) + cross(vL2/2,vWDEF) + cross(vA2,vFCE) + cross(vA2,vWCE/2); 
-
-sMAABC = cross(vL1,-vFD) + cross(vL1/2,vWABC) + cross(vL1-vB1,-vFCE) + cross(vA1,vFOB) + cross(vL1-vB1,vWCE/2) + cross(vA1,vWOB/2); 
+vecteurDistCD = [xD-xC,yD-yC,0];
 
 
-sommeForcesDEFX = sFDEF(1) == 0;
-sommeForcesDEFY = sFDEF(2) == 0;
-sommeMomentsDDEF = sMAABC(3) == 0;
+sommeForcesABC = vecteurForceA + vecteurForceOB + vecteurPoidsABC + -vecteurForceCE + vecteurPoidsCE/2 + -vecteurForceD + vecteurPoidsOB/2;
 
-sommeForcesABCX  = sFABC(1) == 0;
-sommeForcesABCY = sFABC(2) == 0;
-sommeMomentsAABC = sMAABC(3) ==0;
+sommeForcesDEF = vecteurForceD + vecteurForceCE + vecteurPoidsDEF + vecteurPoidsCE/2 + vecteurW;
 
-[solForcesCE,solForcesOB,solForcesDx,solForcesDy,solForcesAx,solForcesAy] = solve(sommeForcesABCX,sommeForcesABCY,sommeForcesDEFX, sommeForcesDEFY,sommeMomentsAABC,sommeMomentsDDEF,[fCE,fOB,fDx,fDy,fAx,fAy]);
+sommeMomentsDDEF = cross(vecteurDistDF,vecteurW) + cross(vecteurDistDF/2,vecteurPoidsDEF) + cross(vecteurDistDE,vecteurForceCE) + cross(vecteurDistDE,vecteurPoidsCE/2); 
 
-vFA
+sommeMomentsAABC = cross(vecteurDistAD,-vecteurForceD) + cross(vecteurDistAD/2,vecteurPoidsABC) + cross(vecteurDistAD-vecteurDistCD,-vecteurForceCE) + cross(vecteurDistAB,vecteurForceOB) + cross(vecteurDistAD-vecteurDistCD,vecteurPoidsCE/2) + cross(vecteurDistAB,vecteurPoidsOB/2); 
+
+
+sommeForcesDEFX = sommeForcesDEF(1) == 0;
+sommeForcesDEFY = sommeForcesDEF(2) == 0;
+sommeMomentsDDEFZ = sommeMomentsDDEF(3) == 0;
+
+sommeForcesABCX  = sommeForcesABC(1) == 0;
+sommeForcesABCY = sommeForcesABC(2) == 0;
+sommeMomentsAABCZ = sommeMomentsAABC(3) ==0;
+
+[solForcesCE,solForcesOB,solForcesDx,solForcesDy,solForcesAx,solForcesAy] = solve(sommeForcesABCX,sommeForcesABCY,sommeForcesDEFX, sommeForcesDEFY,sommeMomentsAABCZ,sommeMomentsDDEFZ,[forceCE,forceOB,forceDx,forceDy,forceAx,forceAy]);
+
 fprintf('%f \n', solForcesAx);
 
 fprintf('%f \n', solForcesAy);

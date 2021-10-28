@@ -4,12 +4,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Longueurs
-L1=5;     %"Longueur du bras inferieur";
+L1=4.1;     %"Longueur du bras inferieur";
 a1=1;     %"Distance entre la goupille A et B";
 b1=1;     %"Distance entre la goupille C et D";
 c1=.2;     %"Distance entre la goupille C et le centre du bras inferieur";
 d1=0.1;     %"Distance entre la goupille D et le centre du bras inferieur";
-L2=5;    %"Longueur du bras superieur";
+L2=4.1;    %"Longueur du bras superieur";
 a2=2;     %"Distance entre la goupille D et E";
 c2=.1;     %"Distance entre la goupille E et le centre du bras superieur";
 d2=0.3;     %"Distance entre la goupille D et le centre du bras superieur";
@@ -19,14 +19,14 @@ yO = -0.4;
 teta = 0;
 %Forces
 
-fW = 8;
+forceW = 8;
 
 aireSection = input("Entrez l'aire de la section de votre poutre \n");
 
-fWABC = 100; 
+forcePoidsABC = L1 * aireSection * 7850 * 9.81; 
 
-fWDEF = 100 ; 
+forcePoidsDEF = L2 * aireSection * 7850 * 9.81; 
 
-fWCE = input("Entrez le poids d'un des verins \n");
+forcePoidsCE = input("Entrez le poids d'un des verins \n");
 
-fWOB = fWCE;
+forcePoidsOB = forcePoidsCE;

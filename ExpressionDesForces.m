@@ -1,23 +1,23 @@
 %Nom: Forces
 
-syms fCE fOB fDx fDy fAx fAy;
+syms forceCE forceOB forceDx forceDy forceAx forceAy;
 
-vCE = [xE-xC,yE-yC,0];
-vFCE = fCE * vCE / norm(vCE);
+vecteurDistCE = [xE-xC,yE-yC,0];
+vecteurForceCE = forceCE * vecteurDistCE / norm(vecteurDistCE);
 
-vOB = [xB-xO,yB-yO,0];
-vFOB = fOB * vOB / norm(vOB);
+vecteurDistOB = [xB-xO,yB-yO,0];
+vecteurForceOB = forceOB * vecteurDistOB / norm(vecteurDistOB);
 
-vFD = [fDx,fDy,0];
+vecteurForceD = [forceDx,forceDy,0];
 
-vFA = [fAx,fAy,0];
+vecteurForceA = [forceAx,forceAy,0];
 
-vW = [0,fW,0];
+vecteurW = [0,forceW,0];
 
-vWABC = [0,fWABC,0];
+vecteurPoidsABC = [0,forcePoidsABC,0];
 
-vWDEF = [0,fWDEF,0];
+vecteurPoidsDEF = [0,forcePoidsDEF,0];
 
-vWCE = [0,fWCE,0];
+vecteurPoidsCE = [0,forcePoidsCE,0];
 
-vWOB = [0,fWOB,0];
+vecteurPoidsOB = [0,forcePoidsOB,0];
