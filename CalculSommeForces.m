@@ -35,15 +35,15 @@ sommeMomentsAABCZ = sommeMomentsAABC(3) ==0;
 [solForcesCE,solForcesOB,solForcesDx,solForcesDy,solForcesAx,solForcesAy] = solve(sommeForcesABCX,sommeForcesABCY,sommeForcesDEFX, sommeForcesDEFY,sommeMomentsDDEFZ,sommeMomentsAABCZ,[forceCE,forceOB,forceDx,forceDy,forceAx,forceAy]);
 %sommeForcesABCX,sommeForcesABCY,sommeForcesDEFX, sommeForcesDEFY,sommeMomentsDDEFZ,sommeMomentsAABCZ
 %sommeMomentsAABC,sommeMomentsDDEF,sommeForcesABC,sommeForcesDEF
-fprintf('%f \n', solForcesAx);
+fprintf('ForceAx: %f \n', solForcesAx);
 
-fprintf('%f \n', solForcesAy);
+fprintf('ForceAy: %f \n', solForcesAy);
 
-fprintf('%f \n', solForcesDx);
+fprintf('ForceDx: %f \n', solForcesDx);
 
-fprintf('%f\n', solForcesDy);
+fprintf('ForceDy: %f\n', solForcesDy);
 
-fprintf('%f\n', solForcesCE);
+fprintf('ForceCE: %f\n', solForcesCE);
 
-fprintf('%f\n', solForcesOB);
+fprintf('ForceOB: %f\n', solForcesOB);
 

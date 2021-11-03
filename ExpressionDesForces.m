@@ -16,8 +16,8 @@ vecteurForceD = [forceDx,forceDy,0];
 
 vecteurForceA = [forceAx,forceAy,0];
 
-vecteurW = [0,forceW,0];
+vecteurW = [0,-forceW,0];
 
-vecteurPoidsABC = [0,forcePoidsABC,0];
+vecteurPoidsABC = [0,-forcePoidsABC,0];
 
-vecteurPoidsDEF = [0,forcePoidsDEF,0];
+vecteurPoidsDEF = [0,-forcePoidsDEF,0];
