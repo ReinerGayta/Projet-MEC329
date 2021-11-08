@@ -9,7 +9,7 @@ CoordonnesPointsMobiles();
 OBMin=sqrt((xB-xO)^2+(yB-yO)^2);
 CEMin=sqrt((xE-xC)^2+(yE-yC)^2);
 
-% %Verification de longueur OB
+%Verification de longueur OB
 % if(OBMax <= OBMin * 1.5)
 %   error("Valeur de OBMin trop petit, veuillez réessayer");  
 % end

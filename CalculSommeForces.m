@@ -15,7 +15,7 @@ vecteurDistCD = [xD-xC,yD-yC,0];
 vecteurDistDG2 = [xG2-xD, yG2-yD, 0];
 
 
-sommeForcesABC = vecteurForceA + vecteurForceOB + -vecteurForceCE + -vecteurForceD;
+sommeForcesABC = vecteurForceA + vecteurForceOB + -vecteurForceCE + -vecteurForceD + vecteurPoidsABC;
 
 sommeForcesDEF = vecteurForceD + vecteurForceCE + vecteurPoidsDEF + vecteurW;
 
