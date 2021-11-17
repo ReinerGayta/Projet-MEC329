@@ -19,6 +19,8 @@ yO = -0.4;
 teta = 0;
 teta1 = input("Entrez l'angle d'inclinaison du bras ABC \n");
 teta2 = input("Entrez l'angle d'inclinaison du bras DEF \n");
+
+veutAfficher = false;
 %Forces
 
 forceW = 8000;

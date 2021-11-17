@@ -2,17 +2,21 @@
 teta1Temp = teta1;
 teta2Temp = teta2;
 
+veutAfficher = false;
+
 teta1 = 75;
 teta2 = 75;
 CoordonnesPointsMobiles();
-OBMax=sqrt((xB-xO)^2+(yB-yO)^2);
-CEMax=sqrt((xE-xC)^2+(yE-yC)^2);
+OBMax=OB;
+CEMax=CE;
 
 teta1 = 0;
 teta2 = 0;
 CoordonnesPointsMobiles();
-OBMin=sqrt((xB-xO)^2+(yB-yO)^2);
-CEMin=sqrt((xE-xC)^2+(yE-yC)^2);
+OBMin=OB;
+CEMin=CE;
+
+veutAfficher = true;
 
 teta1 = teta1Temp;
 teta2 = teta2Temp;
@@ -34,6 +38,4 @@ if(CEMax >= CEMin * 1.9)
     error("Valeur de CEMax trop grand, veuillez réessayer");  
 end
 
-fprintf('Valeur de OB: %.2f \n',OBMax);
-fprintf('Valeur de CE: %.2f \n',CEMax);
 

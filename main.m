@@ -5,8 +5,10 @@ clc;
 
 liste_variables();
 calculer_Hmax();
-CoordonnesPointsMobiles();
+%CoordonnesPointsMobiles();
 LongueursVerins();
+veutAfficher = true;
 CoordonnesPointsMobiles();
 ExpressionDesForces();
 CalculSommeForces();
+CalculsMomentsForcesAx();
