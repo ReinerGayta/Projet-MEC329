@@ -1,12 +1,6 @@
 %Script pour calculer les forces axiales et les moments de flexion autour
 %des points B, C et E
 
-teta1Temp = teta1;
-teta2Temp = teta2;
-
-teta1 = teta1*pi/180;
-teta2 = teta2*pi/180;
-
 %Calculs à gauche du point B
 
 centroideAB = [(a1/2)*cos(teta1),(a1/2)*sin(teta1),0];
@@ -53,9 +47,9 @@ masseAC = [0,-(L1-b1) * aireSection * 7850 * 9.81,0];
 forceA;
 forceOB = solForcesOB * pointOB/norm(pointOB);
 
-masseACAxiale = (dot(masseAC,centroideAC)/(norm(centroideAC)^2))*centroideAC;
+masseACAxiale = (dot(masseAC,centroideAC)/(norm(centroideAC))^2)*centroideAC;
 forceAAxiale;
-forceOBAxiale = (dot(forceOB,centroideAC)/(norm(centroideAC)^2))*centroideAC;
+forceOBAxiale = (dot(forceOB,centroideAC)/(norm(centroideAC))^2)*centroideAC;
 
 forceAxialAC = masseACAxiale + forceAAxiale + forceOBAxiale;
 
@@ -69,16 +63,16 @@ brasLevierD = [xD,yD,0] - extremiteAC;
 masseCD = [0,-(b1) * aireSection * 7850 * 9.81,0];
 forceD;
 
-masseCDAxiale = (dot(masseCD,centroideCD)/(norm(centroideCD)^2))*centroideCD;
+masseCDAxiale = (dot(masseCD,centroideCD)/(norm(centroideCD))^2)*centroideCD;
 forceDAxiale;
 
 forceAxialCD = masseCDAxiale + forceDAxiale;
 
 momentFlexionCD = cross(centroideCD,masseCD) + cross(brasLevierD,forceD);
 
-%Caluls à droite du point E
+%Caluls à gauche du point E
 
-centroideDE = [-((a2)/2)*cos(teta2),((a2)/2)*sin(teta1),0];
+centroideDE = [((a2)/2)*cos(teta2),((a2)/2)*sin(teta1),0];
 
 pointD = [xD,yD,0];
 pointEMilieu = [xE+d2*sin(teta2),yE+d2*cos(teta2),0];
@@ -88,30 +82,27 @@ brasLevierD = pointEMilieu - pointD;
 forceD;
 masseDE = [0,-(a2) * aireSection * 7850 * 9.81,0];
 
-masseDEAxiale = (dot(masseDE,centroideDE)/(norm(centroideDE)^2))*centroideDE;
-forceDAxiale = (dot(forceD,centroideDE)/(norm(centroideDE)^2))*centroideDE;
+masseDEAxiale = (dot(masseDE,centroideDE)/(norm(centroideDE))^2)*centroideDE;
+forceDAxiale = (dot(forceD,centroideDE)/(norm(centroideDE))^2)*centroideDE;
 
 forceAxialDE = masseDEAxiale + forceDAxiale;
 
 momentFlexionDE = cross(centroideDE,masseDE) + cross(brasLevierD,forceD);
 
-%Calculs à gauche du point E
+%Calculs à droite du point E
 
-centroideEF = [-((L2-a2)/2)*cos(teta2),((L2-a2)/2)*sin(teta1),0];
+centroideEF = [((L2-a2)/2)*cos(teta2),((L2-a2)/2)*sin(teta1),0];
 brasLevierF = [xF,yF,0] - pointEMilieu;
 
 masseEF = [0,-(L2-a2) * aireSection * 7850 * 9.81,0];
 forceF = [0,-forceW,0];
 
-forceFAxiale = (dot(forceF,centroideEF)/(norm(centroideEF)^2))*centroideEF;
-masseEFAxiale = (dot(masseEF,centroideEF)/(norm(centroideEF)^2))*centroideEF;
+forceFAxiale = (dot(forceF,centroideEF)/(norm(centroideEF))^2)*centroideEF;
+masseEFAxiale = (dot(masseEF,centroideEF)/(norm(centroideEF))^2)*centroideEF;
 
 forceAxialEF = forceFAxiale + masseEFAxiale;
 
 momentFlexionEF = cross(centroideEF,masseEF) + cross(brasLevierF,forceF);
-
-teta1 = teta1Temp;
-teta2 = teta2Temp;
 
 fprintf('momentFlexionAB: %f \n', momentFlexionAB(3));
 
