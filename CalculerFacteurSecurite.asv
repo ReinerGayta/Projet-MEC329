@@ -29,9 +29,8 @@ function fs = CalculerFacteurSecurite(forceAx,momentFlex,aire,I,S,Z,Re,L,L2,a2)
 
     %En compression
     elseif(forceAx > 0)
-        l3 = L2-a2;
         %Verifie s'il y a deflexion
-        if(L-l3 <= 0.0001)
+        if(L-l3 <)
             k = 2;
             e = momentFlex/forceAx;
         else

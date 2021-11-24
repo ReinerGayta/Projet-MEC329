@@ -17,8 +17,8 @@ tetaMax=75;        %"Angle incinaison entre les deux bras";
 xO = 0.2;
 yO = -0.4;
 teta = 0;
-ReMembrure = 3*10^8;
-ReGoupille = 5*10^8;
+ReMembrure = 300;
+ReGoupille = 500;
 teta1 = input("Entrez l'angle d'inclinaison du bras ABC \n");
 teta2 = input("Entrez l'angle d'inclinaison du bras DEF \n");
 
