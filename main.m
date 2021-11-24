@@ -12,3 +12,4 @@ CoordonnesPointsMobiles();
 ExpressionDesForces();
 CalculSommeForces();
 CalculsMomentsForcesAx();
+CalculDesGoupilles();

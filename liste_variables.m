@@ -27,20 +27,20 @@ veutAfficher = false;
 
 forceW = 6000*1.25;
 
-aireSection = input("Entrez l'aire de la section de votre poutre \n");
+aireSection = input("Entrez l'aire de la section de votre poutre [m^2] \n");
 
 forcePoidsABC = L1 * aireSection * 7850 * 9.81; 
 
 forcePoidsDEF = L2 * aireSection * 7850 * 9.81; 
 
-forcePoidsCE = input("Entrez le poids d'un des verins \n");
+% forcePoidsCE = input("Entrez le poids d'un des verins \n");
 
-I = input("Entrez le moment d'inertie de la section \n");
+I = input("Entrez le moment d'inertie de la section [mm^4] \n");
 
-S = input("Entrez le module elastique de la section (S) \n");
+S = input("Entrez le module elastique de la section [mm^3] (S) \n");
 
-Z = input("Entrez le module plastique de la section (Z) \n");
+Z = input("Entrez le module plastique de la section [mm^3] (Z) \n");
 
-forcePoidsCE = forcePoidsCE * 9.81;
+% forcePoidsCE = forcePoidsCE * 9.81;
 
-forcePoidsOB = forcePoidsCE;
+% forcePoidsOB = forcePoidsCE;

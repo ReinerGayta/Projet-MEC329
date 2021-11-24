@@ -11,7 +11,6 @@ teta2 = teta2*pi/180;
 
 centroideAB = [(a1/2)*cos(teta1),(a1/2)*sin(teta1),0];
 extremiteAB = [(a1)*cos(teta1),(a1)*sin(teta1),0];
-tranchantAB = [centroideAB(2),-centroideAB(1),0];
 
 masseAB = [0,-a1 * aireSection * 7850 * 9.81,0];
 forceA = [solForcesAx,solForcesAy,0];
@@ -19,10 +18,6 @@ forceA = [solForcesAx,solForcesAy,0];
 masseABAxiale = (dot(masseAB,centroideAB)/((norm(centroideAB)^2)))*centroideAB;
 forceAAxiale = (dot(forceA,centroideAB)/(norm(centroideAB)^2))*centroideAB;
 
-masseABTranchant = (dot(masseAB,tranchantAB)/((norm(tranchantAB)^2)))*tranchantAB;
-forceATranchant = (dot(forceA,tranchantAB)/((norm(tranchantAB)^2)))*tranchantAB;
-
-forceTranchantAB = masseABTranchant + forceATranchant;
 forceAxialAB = masseABAxiale + forceAAxiale;
 momentFlexionAB = cross(centroideAB,masseAB) + cross(extremiteAB,forceA);
 
@@ -37,7 +32,6 @@ fsAB = CalculerFacteurSecurite(nForceAxialAB,norm(momentFlexionAB),aireSection,I
 %%%%%%%%%%%%%%%%%%%%%%%%Calculs à droite du point B%%%%%%%%%%%%%%%%%%%%%%%%
 
 centroideBD = [((L1-a1)/2)*cos(teta1),((L1-a1)/2)*sin(teta1),0];
-tranchantBD = [centroideBD(2),-centroideBD(1),0];
 brasLevierBC = [xC,yC,0] - extremiteAB;
 brasLevierBD = [xD,yD,0] - extremiteAB;
 
@@ -191,17 +185,6 @@ fprintf('forceAxialEF: %f \n', forceAxialEF);
 
 fprintf('fs membrures: %f \n', fsMin);
 
-fprintf('fs membrures: %f \n', fsEF);
-
-fprintf('fs membrures: %f \n', fsDE);
-
-fprintf('fs membrures: %f \n', fsCD);
-
-fprintf('fs membrures: %f \n', fsAB);
-
-fprintf('fs membrures: %f \n', fsAC);
-
-fprintf('fs membrures: %f \n', fsBD);
 
 
 
