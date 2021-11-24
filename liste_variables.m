@@ -3,7 +3,7 @@
 %DATE:28 septembre 2021
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Longueurs
+%Longueurs à changer
 L1=4.1;     %"Longueur du bras inferieur";
 a1=1;     %"Distance entre la goupille A et B";
 b1=.6;     %"Distance entre la goupille C et D";
@@ -13,9 +13,10 @@ L2=4.1;    %"Longueur du bras superieur";
 a2=2;     %"Distance entre la goupille D et E";
 c2=.1;     %"Distance entre la goupille E et le centre du bras superieur";
 d2=0.3;     %"Distance entre la goupille D et le centre du bras superieur";
-tetaMax=75;        %"Angle incinaison entre les deux bras";
 xO = 0.2;
 yO = -0.4;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+tetaMax=75;        %"Angle incinaison entre les deux bras";
 teta = 0;
 ReMembrure = 300;
 ReGoupille = 500;
